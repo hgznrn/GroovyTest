@@ -39,17 +39,21 @@ class PuhueiPage extends Page {
         btnLogin.click()
         println "bbb"
     }
+
+    void loginagain() {
+        println "loginagain"
+    }
 }
 
 class PuhueiPage1 extends Page {
-    static url = "http://www.puhuei.com/login"
-    static at = { waitFor{ title == '會員登入'} }
+    static url = "http://www.puhuei.com/user"
+    static at = { waitFor{ title == '會員專區'} }
     static content = {
         usernameInput { $("input[name='username']") }
         passwordInput { $("input[name='password']") }
         btnLogin {$("button[id='login-button']") }
     }
-    void login(String account, String password) {
+    static void login(String account, String password) {
         println "aaa"
     }
 }
@@ -62,9 +66,14 @@ Browser.drive {
     }
 
     to PuhueiPage
+    at PuhueiPage
     login("system", "coke08150114")
     to PuhueiPage1
     login("aa", "bb")
+    loginagain()
+
+
+
 
 }.quit()
 
