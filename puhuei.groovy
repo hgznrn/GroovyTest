@@ -68,10 +68,14 @@ Browser.drive {
     while(NextPage.size() > 0)
     {
         NextPage.click()
+        sleep(1000)
 
         def trData = $("table[class*='uk-table-striped'] tbody tr")
         
         trData.each { tData ->
+
+            sleep(300)
+
             def tdData = tData.find("td")
             def tdData_Name = tdData[1]
             def tdData_ID = tdData[2].text()
@@ -100,6 +104,9 @@ Browser.drive {
 
                 def bank_name_split = $("td[id='bank_name']").text().split('/')
                 def bank_name, bank_sub_name
+
+                println bank_name_split
+
                 if(bank_name_split.size() > 1)
                 {
                     bank_name = bank_name_split[0]
@@ -131,8 +138,6 @@ Browser.drive {
                 
             }
         }
-
-        sleep(1000)
         NextPage = $(".pagination li:last-child").find("a") //最後一個子元素
     }
 
