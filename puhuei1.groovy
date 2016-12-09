@@ -22,6 +22,7 @@ Browser.drive {
         return
     }
 
+    evaluate(new File("Plugin/PuhueiPageScript.groovy"))
     aa()
 
 }.quit()

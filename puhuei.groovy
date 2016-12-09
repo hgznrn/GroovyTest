@@ -67,8 +67,9 @@ Browser.drive {
     def NextPage = $(".pagination li:last-child").find("a") //最後一個子元素
     while(NextPage.size() > 0)
     {
+        sleep(500)
         NextPage.click()
-        sleep(1000)
+        sleep(500)
 
         def trData = $("table[class*='uk-table-striped'] tbody tr")
         
@@ -97,6 +98,8 @@ Browser.drive {
 
                 tdData_BankDetail.click()
 
+                sleep(300)
+
                 waitFor { $("td[id='bank_account']").text() != "讀取中" }
                 
                 def bank_acc_name = $("td[id='bank_account_name']").text()
@@ -122,6 +125,8 @@ Browser.drive {
 
                 $("a[class='uk-modal-close uk-close']").click()
 
+                sleep(100)
+
                 //放到Excel當中，並產出一個.csv檔
                 def slash_bank_sub_id = "/ " + bank_sub_id
                 def slash_bank_acc = "/ " + bank_acc
@@ -135,7 +140,6 @@ Browser.drive {
                     new CSVWriter(writer).writeNext((String[]) [tdData_ID, 
                         bank_acc_name, bank_name, bank_sub_name, bank_sub_id, bank_acc])
                 }*/
-                
             }
         }
         NextPage = $(".pagination li:last-child").find("a") //最後一個子元素

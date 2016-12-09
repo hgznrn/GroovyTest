@@ -21,8 +21,4 @@ class PuhueiPage extends Page {
     }
 }
 
-def aa () {
-
-    println "aa"
-}
 
