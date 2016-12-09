@@ -1,4 +1,4 @@
-package TestPages
+package Pages
 
 class PuhueiPage extends geb.Page {
     static url = "http://www.puhuei.com/login"
