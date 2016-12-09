@@ -1,7 +1,6 @@
-package Plugin
-import geb.Page
+package TestPages
 
-class PuhueiPage extends Page {
+class PuhueiPage extends geb.Page {
     static url = "http://www.puhuei.com/login"
     static at = { waitFor{ title == '會員登入'} }
     static content = {
@@ -14,10 +13,6 @@ class PuhueiPage extends Page {
         passwordInput.value(password)
         btnLogin.click()
         println "Login Finish"
-    }
-
-    void loginagain() {
-        println "loginagain"
     }
 }
 
