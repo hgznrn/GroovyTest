@@ -9,11 +9,11 @@ RunScript =
 {
 	geb.Browser.drive 
 	{
-		if(this.args.size() != 4) //包含
-	    {
-	        println "Warring!! Args is 3 number(Year Month Day)"
-	        return false
-	    }
+		if(!CheckArgsNum(3)) 
+		{
+			println "Warring!! Args is 3 number(Year Month Day)"
+			return
+		}
 
 	    to PuhueiPage
 	    at PuhueiPage
@@ -24,14 +24,10 @@ RunScript =
 
 RunMainScript = 
 { 
-	def flag = false;
 	geb.Browser.drive 
 	{
-		//設定限制3個參數
-		flag = CheckArgsNum(3)
+
 	}
-	if (flag) return geb.Browser.drive
-	else return null
 }
 
 
