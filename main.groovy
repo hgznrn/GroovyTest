@@ -21,7 +21,7 @@ driver = {
     ChromeDriver driver = new ChromeDriver(capabilities) 
 }
 
-//evaluate(new File("Config/config.groovy"))
+evaluate(new File("Config/config.groovy"))
 
 if(this.args.size() < 1)
 {
@@ -29,13 +29,9 @@ if(this.args.size() < 1)
 	return
 }
 
-evaluate(new File("TestCase/" + this.args[0]))
+evaluate(new File(TestCasePath + this.args[0] + ".groovy"))
 
-def flag = RunMainScript()
-println flag
-if(flag) {
-	println "dkfjkdjf"
-	RunScript()	
-} 
+RunMainScript()
+RunScript()	
 
 
