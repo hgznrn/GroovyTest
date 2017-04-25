@@ -18,7 +18,6 @@ RunScript =
 	    to PuhueiPage
 	    at PuhueiPage
 	    login("system", "coke08150114")
-
 	}.quit()
 }
 

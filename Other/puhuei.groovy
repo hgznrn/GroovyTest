@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions
 import au.com.bytecode.opencsv.*
 import groovy.swing.SwingBuilder
 
-System.setProperty('webdriver.chrome.driver', './chromedriver')
+System.setProperty('webdriver.chrome.driver', '../chromedriver')
 
 driver = { 
     DesiredCapabilities capabilities = DesiredCapabilities.chrome()
